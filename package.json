@@ -19,5 +19,18 @@
   "bugs": {
     "url": "https://github.com/luoshushu/SL-Ul/issues"
   },
-  "homepage": "https://github.com/luoshushu/SL-Ul#readme"
+  "homepage": "https://github.com/luoshushu/SL-Ul#readme",
+  "dependencies": {
+    "vue": "^2.6.10",
+    "vue-hot-reload-api": "^2.3.3"
+  },
+  "devDependencies": {
+    "@vue/component-compiler-utils": "^3.0.0",
+    "node-sass": "^4.12.0",
+    "parcel-bundler": "^1.9.2",
+    "vue-template-compiler": "^2.6.10"
+  },
+  "alias": {
+    "vue": "./node_modules/vue/dist/vue.common.js"
+  }
 }
