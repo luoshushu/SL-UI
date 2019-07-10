@@ -1,10 +1,6 @@
 <template>
   <button class="sl-button" :class="{[`icon-${iconPosition}`]:true}">
-
-      <svg v-if="icon" class="icon"  aria-hidden="true">
-        <use :xlink:href="`#i-${icon}`"></use>
-      </svg> 
-
+      <sl-icon v-if="icon" class="icon"  :name="icon"></sl-icon>
       <div class="content">
           <slot></slot>
       </div>
@@ -12,9 +8,7 @@
   </button>
 </template>
 <script>
-  export default {
- 
-    // props:['icon','iconPosition']
+  export default { 
     props:{
       icon:{},
       iconPosition:{
