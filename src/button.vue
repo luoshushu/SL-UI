@@ -1,7 +1,7 @@
 <template>
   <button class="sl-button" :class="{[`icon-${iconPosition}`]:true}">
 
-      <svg v-if="icon" class="icon">
+      <svg v-if="icon" class="icon"  aria-hidden="true">
         <use :xlink:href="`#i-${icon}`"></use>
       </svg> 
 
@@ -13,12 +13,18 @@
 </template>
 <script>
   export default {
-    data() {
-      return {
-        
+ 
+    // props:['icon','iconPosition']
+    props:{
+      icon:{},
+      iconPosition:{
+        type:String,
+        default:'left',
+        validator(value){
+          return !(value !== 'left' && value !== 'right');
+        }
       }
-    },
-    props:['icon','iconPosition']
+    }
   }
 </script>
 <style lang="scss">
@@ -31,7 +37,7 @@
     background: var(--button-bg);
     display: inline-flex;
     justify-content: center;
-    align-content: center;
+    align-items: center;
     vertical-align: middle;
     &:hover {
       border-color: var(--border-color-hover);
@@ -42,11 +48,11 @@
     &:focus {
       outline: none;
     }
-    > .icon{order: 1;}
+    > .icon{order: 1; margin-right: .3em; margin-left:0;}
     > .content{order: 2;}
-    
+
     &.icon-right{
-      > .icon{ order: 2;}
+      > .icon{ order: 2; margin-right:0; margin-left: .3em;}
       > .content{order: 1;}
     }
 
