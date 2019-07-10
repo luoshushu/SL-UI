@@ -1,6 +1,7 @@
 <template>
   <button class="sl-button" :class="{[`icon-${iconPosition}`]:true}">
       <sl-icon v-if="icon" class="icon"  :name="icon"></sl-icon>
+      <sl-icon v-if="icon" class="loading"  :name="icon"></sl-icon>
       <div class="content">
           <slot></slot>
       </div>
@@ -22,6 +23,10 @@
   }
 </script>
 <style lang="scss">
+@keyframes spin {
+  0%{transform: rotate(0deg);}
+  100%{transform: rotate(360deg);}
+}
   .sl-button {
     font-size: var(--font-size);
     height: var(--button-height);
@@ -48,6 +53,9 @@
     &.icon-right{
       > .icon{ order: 2; margin-right:0; margin-left: .3em;}
       > .content{order: 1;}
+    }
+    .loading{
+      animation: spin 2s infinite linear;
     }
 
   }
