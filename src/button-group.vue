@@ -9,7 +9,6 @@ export default {
 
     for (let node  of this.$el.children) {
       let name =  node.nodeName.toLowerCase()
-      // console.log(node)
       if(name !== 'button'){
         console.warn(`sl-button-group 的子元素应该是 sl-button, 但你写的是 ${name} 元素`);
         
@@ -25,6 +24,7 @@ export default {
   vertical-align: top;
   > .sl-button{
     border-radius: 0;
+    
     &:not(:first-child){ /* 如果不是第一个子元素*/
       margin-left: -1px;
     }

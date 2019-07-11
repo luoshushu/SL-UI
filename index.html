@@ -37,16 +37,11 @@
   <div id="app">
     <sl-button >我不爱css </sl-button>
     <sl-button @click=" loading1 = !loading1" icon="xiazai" :loading="loading1" icon-position="left">我不爱css</sl-button>
-    <sl-button @click=" loading2 = !loading2"icon="xiazai" :loading="loading2" icon-position="right">我不爱css</sl-button>
-    <sl-button @click=" loading3 = !loading3" icon="set" :loading="loading3" icon-position="right">我不爱css</sl-button>
+    <sl-button @click=" loading2 = !loading2" icon="set" :loading="loading2" icon-position="right">我不爱css</sl-button>
     <sl-button-group>
-      <div>
-
-        <sl-button @click=" loading3 = !loading3" icon="previous" :loading="loading3" icon-position="left">上一页</sl-button>
-      </div>
-        <sl-button @click=" loading3 = !loading3" :loading="loading3" icon-position="right">更多</sl-button>
-        <sl-button @click=" loading3 = !loading3" icon="next" :loading="loading3" icon-position="right">下一页</sl-button>
-
+        <sl-button  icon="previous"  icon-position="left">上一页</sl-button>
+        <sl-button icon-position="right">更多</sl-button>
+        <sl-button  icon="next"  icon-position="right">下一页</sl-button>
     </sl-button-group>
   </div>
   <script src="./src/app.js"></script>
