@@ -21,6 +21,8 @@ chai.use(spies)
 const expect  = chai.expect
 
 // 单元测试
+try {
+// 测试按钮包含 icon
 {  
   const Constructor = Vue.extend(Button)
   const vm = new Constructor({
@@ -106,4 +108,16 @@ const expect  = chai.expect
   // 希望间谍被调用
   button.click()
   expect(spy).to.have.been.called()
+}
+
+
+  
+} catch (error) {
+  window.errors  = [error]
+  
+}finally{
+  window.errors && window.errors.map( (error)=>{
+    console.error(error.message);
+    
+  })
 }
