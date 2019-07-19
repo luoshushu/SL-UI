@@ -5,7 +5,16 @@ const expect = chai.expect;
  Vue.config.productionTip = false
  Vue.config.devtools = false
 
+/**
+ * 
+ * xxx它会死
+ * describe 'xxx'
+ *  it has a head  
+ *
+ *  
+ */ 
  describe('Button', () => {
+    //  BDD 行为驱动测试
      it('存在.', () => {
          expect(Button).to.be.ok
      })
@@ -18,7 +27,7 @@ const expect = chai.expect;
          }).$mount()
          const useElement = vm.$el.querySelector('use')
          expect(useElement.getAttribute('xlink:href')).to.equal('#i-settings')
-         vm.$destroy()
+         vm.$destroy() //清理
      })
      it('可以设置loading.', () => {
          const Constructor = Vue.extend(Button)
@@ -70,9 +79,10 @@ const expect = chai.expect;
          }
          }).$mount()
 
-         const callback = sinon.fake();
+         const callback = sinon.fake();// fake 假函数 知道自己有没有被调用
          vm.$on('click', callback)
          vm.$el.click()
+        // 期待回调被调用
          expect(callback).to.have.been.called
 
      })
