@@ -55,7 +55,7 @@
 
          // start these browsers
          // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-         browsers: ['ChromeHeadless'], //打开Chrome浏览器
+         browsers: ['ChromeHeadless'], //打开无头Chrome浏览器
 
 
          // Continuous Integration mode
