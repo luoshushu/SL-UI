@@ -1,5 +1,5 @@
 <template>
-  <button class="sl-button" :class="{[`icon-${iconPosition}`]:true}" @click="$emit('click')">
+  <button class="sl-button xxx99" :class="{[`icon-${iconPosition}`]:true}" @click="$emit('click')">
       <sl-icon v-if="icon && !loading" class="icon"  :name="icon"></sl-icon>
       <sl-icon v-if="loading" class="loading icon"  name="loading"></sl-icon>
       <div class="content">
