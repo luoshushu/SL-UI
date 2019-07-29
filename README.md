@@ -42,10 +42,7 @@ export default {
   }
 }
 ```
-4、引入svg Symbol
-```
-  <script src="//at.alicdn.com/t/font_1281463_s44mkpfz49e.js"></script>
-```
+
 
 ## 文档
 ## 提问
