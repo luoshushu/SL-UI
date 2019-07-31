@@ -2,10 +2,12 @@ import Vue from 'vue'
 import Button from './button'
 import icon from './icon'
 import buttonGroup from './button-group'
+import input from './input'
 
 Vue.component('sl-button',Button)
 Vue.component('sl-icon',icon)
 Vue.component('sl-button-group',buttonGroup)
+Vue.component('sl-input',input)
 
 new Vue({
   el: '#app',
@@ -35,6 +37,8 @@ try {
   console.log(useElement);
   let href=  useElement.getAttribute('xlink:href')
   expect(href).to.eq('#i-previous') //期待href 等于#i-previous
+  vm.$el.remove() //删除
+    vm.$destroy() //销毁实例
 }
 // 测试loading
 {
@@ -108,6 +112,7 @@ try {
   // 希望间谍被调用
   button.click()
   expect(spy).to.have.been.called()
+  
 }
 
 

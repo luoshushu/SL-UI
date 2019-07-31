@@ -35,6 +35,14 @@
 
 <body>
   <div id="app">
+   
+    
+        <sl-input value="宋霖"></sl-input>
+        <sl-input value="苏宋霖" disabled></sl-input>
+        <sl-input value="苏先生" readonly></sl-input>
+        <sl-input value="苏" error="名字不能输入一个字"></sl-input>
+    
+        <div style="margin:15px 0">
     <sl-button >我不爱css </sl-button>
     <sl-button @click=" loading1 = !loading1" icon="xiazai" :loading="loading1" icon-position="left">我不爱css</sl-button>
     <sl-button @click=" loading2 = !loading2" icon="set" :loading="loading2" icon-position="right">我不爱css</sl-button>
@@ -43,6 +51,7 @@
         <sl-button icon-position="right">更多</sl-button>
         <sl-button  icon="next"  icon-position="right">下一页</sl-button>
     </sl-button-group>
+  </div>
   </div>
   <div id="test"></div>
   <script src="./src/app.js"></script>

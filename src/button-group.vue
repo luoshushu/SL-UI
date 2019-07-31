@@ -5,6 +5,7 @@
 </template>
 <script>
 export default {
+  name:'slButtonGroup',
   mounted() {
 
     for (let node  of this.$el.children) {
@@ -18,7 +19,7 @@ export default {
   },
 }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 .sl-button-group{
   display: inline-flex;
   vertical-align: top;
