@@ -1,6 +1,12 @@
 <template>
   <div class="sl-input">
-    <input :value="value" :disabled="disabled" :readonly="readonly" type="text" />
+    <input :value="value" :disabled="disabled" :readonly="readonly" type="text" 
+    @change="$emit('change',$event)"
+    @click="$emit('click',$event)"
+    @blur="$emit('blur',$event)"
+    @focus="$emit('focus',$event)"
+    @input="$emit('input',$event)"
+    />
     <template v-if="error">
       <icon name="error" class="icon-error" />
       <span class="errorMessage">{{error}}</span>
