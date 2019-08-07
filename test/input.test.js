@@ -5,7 +5,12 @@ const expect = chai.expect;
  Vue.config.productionTip = false
  Vue.config.devtools = false
 
-
+/**
+ * mocha 提供 describe it
+ * sinon 提供 fake
+ * chai 提供 expect
+ * sinon-chai 提供 calledWith
+ */
  describe('Input', () => {
     //  BDD 行为驱动测试
      it('存在.', () => {
@@ -72,9 +77,18 @@ const expect = chai.expect;
                 const callBack = sinon.fake();
                 vm.$on(eventName,callBack)
                 let event = new Event(eventName)
+                Object.defineProperty(
+                    event,
+                    'target',
+                    {
+                        value:{value:'苏宋霖'},
+                        enumerable:true
+                    }
+                )
                 let inputElement = vm.$el.querySelector('input')
                 inputElement.dispatchEvent(event) //dispatchEvent 模拟触发事件
-                expect(callBack).to.have.been.calledWith(event);
+                // expect(callBack).to.have.been.calledWith(event);
+                expect(callBack).to.have.been.calledWith('苏宋霖');
             })
         }) 
     })

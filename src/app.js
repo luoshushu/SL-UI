@@ -14,6 +14,7 @@ new Vue({
   data:{
     loading1:false,
     loading2:false,
+    something:'苏宋霖'
   },
   methods: {
     inputChange(e){

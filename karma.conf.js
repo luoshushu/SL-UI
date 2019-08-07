@@ -6,7 +6,7 @@
       basePath: '',
          // frameworks to use
          // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-         frameworks: ['mocha', 'sinon-chai'],
+         frameworks: ['mocha', 'sinon-chai'], //使用 mocha sinon-chai
          client: {
              chai: {
                  includeStack: true
@@ -33,7 +33,7 @@
          // test results reporter to use
          // possible values: 'dots', 'progress'
          // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-         reporters: ['progress'],
+         reporters: ['progress'], //控制台打印
 
 
          // web server port

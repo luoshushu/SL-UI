@@ -1,11 +1,11 @@
 <template>
   <div class="sl-input">
     <input :value="value" :disabled="disabled" :readonly="readonly" type="text" 
-    @change="$emit('change',$event)"
-    @click="$emit('click',$event)"
-    @blur="$emit('blur',$event)"
-    @focus="$emit('focus',$event)"
-    @input="$emit('input',$event)"
+    @change="$emit('change',$event.target.value)"
+    @click="$emit('click',$event.target.value)"
+    @blur="$emit('blur',$event.target.value)"
+    @focus="$emit('focus',$event.target.value)"
+    @input="$emit('input',$event.target.value)"
     />
     <template v-if="error">
       <icon name="error" class="icon-error" />
