@@ -37,7 +37,7 @@
 <body>
   <div id="app">
     <div>
-      <sl-row>
+      <!-- <sl-row>
         <sl-col>1</sl-col>
         <sl-col>2</sl-col>
       </sl-row>
@@ -46,17 +46,25 @@
         <sl-col>1</sl-col>
         <sl-col>2</sl-col>
         <sl-col>3</sl-col>
+      </sl-row>-->
+      <sl-row gutter="20">
+        <sl-col >1</sl-col>
+        <sl-col offset="1">2</sl-col>
+      
+      </sl-row> 
+      <sl-row gutter="20">
+        <sl-col :span="2">1111</sl-col>
+        <sl-col :span="22">222</sl-col>
       </sl-row>
-      <sl-row>
-        <sl-col>1</sl-col>
-        <sl-col>2</sl-col>
-        <sl-col>3</sl-col>
-        <sl-col>4</sl-col>
+      <sl-row gutter="20">
+        <sl-col >1111</sl-col>
+        <sl-col >222</sl-col>
+        <sl-col >222</sl-col>
+      </sl-row> 
+      <sl-row gutter="10">
+        <sl-col  >333</sl-col>
+        <sl-col  >333</sl-col>
       </sl-row>
-      <sl-row>
-          <sl-col :span="2">1111</sl-col>
-          <sl-col  :span="22">222</sl-col>
-        </sl-row>
     </div>
 
     <div>
