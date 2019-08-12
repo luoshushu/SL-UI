@@ -1,13 +1,17 @@
 import Vue from 'vue'
 import Button from './button'
-import icon from './icon'
-import buttonGroup from './button-group'
-import input from './input'
+import Icon from './icon'
+import ButtonGroup from './button-group'
+import Input from './input'
+import Row from './row'
+import Col from './col'
 
 Vue.component('sl-button',Button)
-Vue.component('sl-icon',icon)
-Vue.component('sl-button-group',buttonGroup)
-Vue.component('sl-input',input)
+Vue.component('sl-icon',Icon)
+Vue.component('sl-button-group',ButtonGroup)
+Vue.component('sl-input',Input)
+Vue.component('sl-row',Row)
+Vue.component('sl-col',Col)
 
 new Vue({
   el: '#app',

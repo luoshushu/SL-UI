@@ -24,37 +24,61 @@
       --border-color: #999;
       --border-color-hover: #666;
     }
-    #app{
+
+    #app {
       margin: 20px;
     }
   </style>
   <style>
 
-</style>
+  </style>
 </head>
 
 <body>
   <div id="app">
-   
-      <div>
-        <sl-input v-model="something" @change="inputChange"></sl-input>
-        {{something}}
-        </div>
+    <div>
+      <sl-row>
+        <sl-col>1</sl-col>
+        <sl-col>2</sl-col>
+      </sl-row>
 
-        <sl-input value="苏宋霖" disabled></sl-input>
-        <sl-input value="苏先生" readonly></sl-input>
-        <sl-input value="苏" error="名字不能输入一个字"></sl-input>
-    
-       <div style="margin:15px 0">
-    <sl-button >我不爱css </sl-button>
-    <sl-button @click=" loading1 = !loading1" icon="xiazai" :loading="loading1" icon-position="left">我不爱css</sl-button>
-    <sl-button @click=" loading2 = !loading2" icon="set" :loading="loading2" icon-position="right">我不爱css</sl-button>
-    <sl-button-group>
-        <sl-button  icon="previous"  icon-position="left">上一页</sl-button>
+      <sl-row>
+        <sl-col>1</sl-col>
+        <sl-col>2</sl-col>
+        <sl-col>3</sl-col>
+      </sl-row>
+      <sl-row>
+        <sl-col>1</sl-col>
+        <sl-col>2</sl-col>
+        <sl-col>3</sl-col>
+        <sl-col>4</sl-col>
+      </sl-row>
+      <sl-row>
+          <sl-col :span="2">1111</sl-col>
+          <sl-col  :span="22">222</sl-col>
+        </sl-row>
+    </div>
+
+    <div>
+      <sl-input v-model="something" @change="inputChange"></sl-input>
+      {{something}}
+    </div>
+
+    <sl-input value="苏宋霖" disabled></sl-input>
+    <sl-input value="苏先生" readonly></sl-input>
+    <sl-input value="苏" error="名字不能输入一个字"></sl-input>
+
+    <div style="margin:15px 0">
+      <sl-button>我不爱css </sl-button>
+      <sl-button @click=" loading1 = !loading1" icon="xiazai" :loading="loading1" icon-position="left">我不爱css
+      </sl-button>
+      <sl-button @click=" loading2 = !loading2" icon="set" :loading="loading2" icon-position="right">我不爱css</sl-button>
+      <sl-button-group>
+        <sl-button icon="previous" icon-position="left">上一页</sl-button>
         <sl-button icon-position="right">更多</sl-button>
-        <sl-button  icon="next"  icon-position="right">下一页</sl-button>
-    </sl-button-group>
-  </div>
+        <sl-button icon="next" icon-position="right">下一页</sl-button>
+      </sl-button-group>
+    </div>
   </div>
   <div id="test"></div>
   <script src="./src/app.js"></script>
