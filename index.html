@@ -36,7 +36,9 @@
 
 <body>
   <div id="app">
-    <div>
+    <div style="border: 1px solid red; ">
+
+
       <!-- <sl-row>
         <sl-col>1</sl-col>
         <sl-col>2</sl-col>
@@ -47,25 +49,41 @@
         <sl-col>2</sl-col>
         <sl-col>3</sl-col>
       </sl-row>-->
-      <sl-row gutter="20" align="center">
-        <sl-col >1</sl-col>
+      <!-- <sl-row gutter="20" align="center">
+        <sl-col>1</sl-col>
         <sl-col offset="1">2</sl-col>
-      </sl-row> 
+      </sl-row> -->
       <sl-row gutter="20">
-        <sl-col :span="2">1111</sl-col>
-        <sl-col :span="22">222</sl-col>
+        <!-- :span="2" -->
+        <sl-col 
+        :span="2"
+         :phone="{span:14}"
+         :ipad="{span:8}"
+         :narrow-pc="{span:4}"
+      
+         :wide-pc="{span:1}"
+         >1111</sl-col>
+         <!-- :pc="{span:4}"
+         :pc="{span:20}" -->
+         <sl-col 
+         :span="22" 
+        :phone="{span:24}"
+        :ipad="{span:16}"
+        :narrow-pc="{span:20}"
+     
+        :wide-pc="{span:23}"
+        >222</sl-col>
       </sl-row>
-      <sl-row gutter="20">
-        <sl-col >1111</sl-col>
-        <sl-col >222</sl-col>
-        <sl-col >222</sl-col>
-      </sl-row> 
+      <!-- <sl-row gutter="20">
+        <sl-col>1111</sl-col>
+        <sl-col>222</sl-col>
+        <sl-col>222</sl-col>
+      </sl-row>
       <sl-row gutter="10">
-        <sl-col  >333</sl-col>
-        <sl-col  >333</sl-col>
-      </sl-row>
+        <sl-col>333</sl-col>
+        <sl-col>333</sl-col>
+      </sl-row> -->
     </div>
-
     <div>
       <sl-input v-model="something" @change="inputChange"></sl-input>
       {{something}}
@@ -89,7 +107,6 @@
   </div>
   <div id="test"></div>
   <script src="./src/app.js"></script>
-  <!-- <script src="//at.alicdn.com/t/font_1281463_s44mkpfz49e.js"></script> -->
 </body>
 
 </html>
