@@ -4,7 +4,7 @@
   </div>
 </template>
 <script>
-let validator = (value) => {
+let validator = value => {
   let keys = Object.keys(value);
   let valid = true;
   keys.forEach(key => {
@@ -22,11 +22,10 @@ export default {
     offset: {
       type: [String, Number]
     },
-    phone: {type: Object,validator},
-    ipad: {type: Object,validator},
-    narrowPc: {type: Object,validator},
-    pc: {type: Object,validator},
-    widePc: {type: Object,validator},
+    ipad: { type: Object, validator },
+    narrowPc: { type: Object, validator },
+    pc: { type: Object, validator },
+    widePc: { type: Object, validator }
   },
   data() {
     return {
@@ -42,17 +41,15 @@ export default {
       };
     },
     colCalss() {
-      let { span, offset, phone,ipad,narrowPc,pc,widePc } = this;
+      let { span, offset, ipad, narrowPc, pc, widePc } = this;
       let phoneClass = [];
-
       return [
         span && `col-${span}`,
         offset && `offset-${offset}`,
-        ...(phone && [`col-phone-${phone.span}`]),
-        ...(ipad && [`col-ipad-${phone.span}`]),
-        ...(narrowPc && [`col-narrow-pc-${phone.span}`]),
-        ...(pc && [`col-pc-${phone.span}`]),
-        ...(widePc && [`col-wide-pc-${phone.span}`])
+        ...(ipad ? [`col-ipad-${ipad.span}`] : []),
+        ...(narrowPc ? [`col-narrow-pc-${narrowPc.span}`] : []),
+        ...(pc ? [`col-pc-${pc.span}`] : []),
+        ...(widePc ? [`col-wide-pc-${widePc.span}`] : [])
       ];
     }
   }
@@ -60,7 +57,6 @@ export default {
 </script>
 <style lang="scss" scoped>
 .col {
-
   width: 50%;
   $class-prefix: col-; //css前缀
   @for $n from 1 through 24 {
@@ -74,21 +70,7 @@ export default {
       margin-left: ($n / 24) * 100%;
     }
   }
-  @media (max-width: 567px) {
-    $class-prefix: col-phone-; //css前缀
-    @for $n from 1 through 24 {
-      &.#{$class-prefix}#{$n} {
-        width: ($n / 24) * 100%;
-      }
-    }
-    $class-prefix: offset-phone-; //css前缀
-    @for $n from 1 through 24 {
-      &.#{$class-prefix}#{$n} {
-        margin-left: ($n / 24) * 100%;
-      }
-    }
-  }
-  @media (min-width: 577px) and (max-width: 768px) {
+  @media (min-width: 577px) {
     $class-prefix: col-ipad-; //css前缀
     @for $n from 1 through 24 {
       &.#{$class-prefix}#{$n} {
@@ -102,7 +84,7 @@ export default {
       }
     }
   }
-  @media (min-width: 769px) and (max-width: 992px) {
+  @media (min-width: 769px) {
     $class-prefix: col-narrow-pc-; //css前缀
     @for $n from 1 through 24 {
       &.#{$class-prefix}#{$n} {
@@ -116,7 +98,7 @@ export default {
       }
     }
   }
-  @media (min-width: 993px) and (max-width: 1200px) {
+  @media (min-width: 993px) {
     $class-prefix: col-pc-; //css前缀
     @for $n from 1 through 24 {
       &.#{$class-prefix}#{$n} {
@@ -130,7 +112,7 @@ export default {
       }
     }
   }
-  @media (min-width: 1200px) {
+  @media (min-width: 1201px) {
     $class-prefix: col-wide-pc-; //css前缀
     @for $n from 1 through 24 {
       &.#{$class-prefix}#{$n} {
@@ -144,5 +126,19 @@ export default {
       }
     }
   }
+  // @media (max-width: 567px) {
+  //   $class-prefix: col-phone-; //css前缀
+  //   @for $n from 1 through 24 {
+  //     &.#{$class-prefix}#{$n} {
+  //       width: ($n / 24) * 100%;
+  //     }
+  //   }
+  //   $class-prefix: offset-phone-; //css前缀
+  //   @for $n from 1 through 24 {
+  //     &.#{$class-prefix}#{$n} {
+  //       margin-left: ($n / 24) * 100%;
+  //     }
+  //   }
+  // }
 }
 </style>
