@@ -32,6 +32,19 @@ export default {
       gutter: 0
     };
   },
+  methods: {
+    createClass(obj, str = "") {
+      let array = [];
+      if (!obj) return [];
+      if (obj.span) {
+        array.push(`col-${str}${obj.span}`);
+      }
+      if (obj.offset) {
+        array.push(`col-${str}${obj.offset}`);
+      }
+      return array;
+    }
+  },
   computed: {
     colStyle() {
       let { gutter } = this;
@@ -42,14 +55,13 @@ export default {
     },
     colCalss() {
       let { span, offset, ipad, narrowPc, pc, widePc } = this;
-      let phoneClass = [];
+      let createClass = this.createClass;
       return [
-        span && `col-${span}`,
-        offset && `offset-${offset}`,
-        ...(ipad ? [`col-ipad-${ipad.span}`] : []),
-        ...(narrowPc ? [`col-narrow-pc-${narrowPc.span}`] : []),
-        ...(pc ? [`col-pc-${pc.span}`] : []),
-        ...(widePc ? [`col-wide-pc-${widePc.span}`] : [])
+        ...createClass({ span, offset }),
+        ...createClass(ipad, "ipad-"),
+        ...createClass(narrowPc, "narrow-pc-"),
+        ...createClass(pc, "pc-"),
+        ...createClass(widePc, "wide-pc-")
       ];
     }
   }
@@ -126,19 +138,6 @@ export default {
       }
     }
   }
-  // @media (max-width: 567px) {
-  //   $class-prefix: col-phone-; //css前缀
-  //   @for $n from 1 through 24 {
-  //     &.#{$class-prefix}#{$n} {
-  //       width: ($n / 24) * 100%;
-  //     }
-  //   }
-  //   $class-prefix: offset-phone-; //css前缀
-  //   @for $n from 1 through 24 {
-  //     &.#{$class-prefix}#{$n} {
-  //       margin-left: ($n / 24) * 100%;
-  //     }
-  //   }
-  // }
+
 }
 </style>

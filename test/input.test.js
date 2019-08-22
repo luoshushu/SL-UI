@@ -1,9 +1,9 @@
 const expect = chai.expect;
- import Vue from 'vue'
- import Input from '../src/input'
+import Vue from 'vue'
+import Input from '../src/input'
 
- Vue.config.productionTip = false
- Vue.config.devtools = false
+Vue.config.productionTip = false
+Vue.config.devtools = false
 
 /**
  * mocha 提供 describe it
@@ -11,51 +11,51 @@ const expect = chai.expect;
  * chai 提供 expect
  * sinon-chai 提供 calledWith
  */
- describe('Input', () => {
+describe('Input', () => {
     //  BDD 行为驱动测试
-     it('存在.', () => {
-         expect(Input).to.exist;
-     })
-     describe('props 测试', () => {
+    it('存在.', () => {
+        expect(Input).to.exist;
+    })
+    describe('props 测试', () => {
         const Constructor = Vue.extend(Input);
         let vm;
-        afterEach(()=>{
+        afterEach(() => {
             vm.$destroy(); //销毁
         })
-        it('接收 value值',()=>{
-             vm = new Constructor({
-                propsData:{
-                    value:'苏宋霖'
+        it('接收 value值', () => {
+            vm = new Constructor({
+                propsData: {
+                    value: '苏宋霖'
                 }
             }).$mount()
             const inputElement = vm.$el.querySelector('input');
             expect(inputElement.value).to.equal('苏宋霖'); //期待value等于 苏宋霖
             vm.$destroy(); //销毁
         })
-        it('接收 disabled',()=>{
-             vm = new Constructor({
-                propsData:{
-                    disabled:true
+        it('接收 disabled', () => {
+            vm = new Constructor({
+                propsData: {
+                    disabled: true
                 }
             }).$mount()
             const inputElement = vm.$el.querySelector('input');
             expect(inputElement.disabled).to.equal(true); //期待disabled等于 true
             vm.$destroy(); //销毁
         })
-        it('接收 readonly',()=>{
-             vm = new Constructor({
-                propsData:{
-                    readonly:true
+        it('接收 readonly', () => {
+            vm = new Constructor({
+                propsData: {
+                    readonly: true
                 }
             }).$mount()
             const inputElement = vm.$el.querySelector('input');
             expect(inputElement.readOnly).to.equal(true); //期待readonly等于 true
             vm.$destroy(); //销毁
         })
-        it('接收 error',()=>{
-             vm = new Constructor({
-                propsData:{
-                    error:'你错啦'
+        it('接收 error', () => {
+            vm = new Constructor({
+                propsData: {
+                    error: '你错啦'
                 }
             }).$mount()
             const useElements = vm.$el.querySelectorAll('use')
@@ -65,24 +65,24 @@ const expect = chai.expect;
             vm.$destroy(); //销毁
         })
     })
-    describe('事件测试',()=>{
+    describe('事件测试', () => {
         const Constructor = Vue.extend(Input);
         let vm;
-        afterEach(()=>{
+        afterEach(() => {
             vm.$destroy(); //销毁
         })
-        it('changg/click/blur/focus/input',()=>{
-            ['change','click','blur','focus','input'].forEach((eventName)=>{
+        it('changg/click/blur/focus/input', () => {
+            ['change', 'click', 'blur', 'focus', 'input'].forEach((eventName) => {
                 vm = new Constructor({}).$mount()
                 const callBack = sinon.fake();
-                vm.$on(eventName,callBack)
+                vm.$on(eventName, callBack)
                 let event = new Event(eventName)
                 Object.defineProperty(
                     event,
                     'target',
                     {
-                        value:{value:'苏宋霖'},
-                        enumerable:true
+                        value: { value: '苏宋霖' },
+                        enumerable: true
                     }
                 )
                 let inputElement = vm.$el.querySelector('input')
@@ -90,7 +90,7 @@ const expect = chai.expect;
                 // expect(callBack).to.have.been.calledWith(event);
                 expect(callBack).to.have.been.calledWith('苏宋霖');
             })
-        }) 
+        })
     })
-    
- })
+
+})
