@@ -58,6 +58,4 @@ describe('Row', () => {
         vm.$el.remove()
         vm.$destroy()
     })
-
-
 })
