@@ -6,12 +6,17 @@ import Input from './input'
 import Row from './row'
 import Col from './col'
 
+import plugin from './plugin'
+Vue.use(plugin)
+
 Vue.component('sl-button',Button)
 Vue.component('sl-icon',Icon)
 Vue.component('sl-button-group',ButtonGroup)
 Vue.component('sl-input',Input)
 Vue.component('sl-row',Row)
 Vue.component('sl-col',Col)
+
+
 
 new Vue({
   el: '#app',
@@ -25,6 +30,9 @@ new Vue({
       console.log('inputChange');
       console.log(e);
     }
+  },
+  mounted() {
+    this.$toast('哈哈哈 toast')
   },
 });
 

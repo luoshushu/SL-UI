@@ -3,7 +3,7 @@ const expect = chai.expect;
  import Button from '../src/button'
 
  Vue.config.productionTip = false
- Vue.config.devtools = false
+ Vue.config.devtools = false;
 
 /**
  * 
