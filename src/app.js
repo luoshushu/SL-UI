@@ -32,7 +32,14 @@ new Vue({
     }
   },
   mounted() {
-    this.$toast('哈哈哈 toast')
+    this.$toast('哈哈哈 toast',{
+      closeButton:{
+        text:'我知道了',
+        callback(){
+          console.log('回调'); 
+        }
+      }  
+      })
   },
 });
 

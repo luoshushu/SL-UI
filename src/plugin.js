@@ -2,12 +2,24 @@
 import Toast from './toast'
 export default {
   install(Vue,options){
-    Vue.prototype.$toast = function(message){
+    Vue.prototype.$toast = function(message,toastOptions){
       let Constructor = Vue.extend(Toast)
-      let toast = new Constructor()
+      let toast = new Constructor({
+        // propsData:{
+        //   closeButton:{
+        //     text:'我知道了',
+        //     callback(){
+        //       console.log('回调'); 
+        //     }
+        //   }
+        // }
+        propsData:toastOptions.closeButton
+      })
       toast.$slots.default = [message] //插槽
       toast.$mount() //必须$mount()  手动地挂载一个未挂载的实例
       document.body.appendChild(toast.$el)
+
+
     }
   }
 }
