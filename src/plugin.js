@@ -13,7 +13,7 @@ export default {
         //     }
         //   }
         // }
-        propsData:toastOptions.closeButton
+        propsData:toastOptions
       })
       toast.$slots.default = [message] //插槽
       toast.$mount() //必须$mount()  手动地挂载一个未挂载的实例
