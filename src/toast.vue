@@ -74,6 +74,7 @@ export default {
     },
     close() {
       this.$el.remove(); //删除
+      this.$emit('close')
       this.$destroy(); //清除绑定的一些事件
     },
     onClickclose() {
