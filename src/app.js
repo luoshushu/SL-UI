@@ -35,9 +35,12 @@ new Vue({
   
   },
   methods: {
-    clickToast(){
+    clickToast1(){this.clickToast('top')},
+    clickToast2(){this.clickToast('middle')},
+    clickToast3(){this.clickToast('bottom')},
+    clickToast(position){
       this.$toast(`操作成功！！  ${parseInt(Math.random()*100) }`,{
-        position:'middle',
+        position,
         enableHtml:false,
         closeButton:{
           text:'知道了',
