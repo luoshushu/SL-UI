@@ -48,8 +48,7 @@ new Vue({
             console.log('回调'); 
           }
         },
-        autoClose:false,
-        autoCloseDelay:4,  
+        autoClose:3, 
         })
     }
   },

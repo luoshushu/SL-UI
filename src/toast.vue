@@ -17,13 +17,11 @@ export default {
   props: {
     // 自动关闭
     autoClose: {
-      type: Boolean,
-      default: true
-    },
-    // N秒后关闭时间
-    autoCloseDelay: {
-      type: Number,
-      default: 5
+      type: [Boolean, Number],
+      default: 5,
+      validator(value) {
+        return value === false || typeof value === "number";
+      }
     },
     closeButton: {
       type: Object,
@@ -64,14 +62,16 @@ export default {
       if (this.autoClose) {
         setTimeout(() => {
           this.close();
-        }, this.autoCloseDelay * 1000);
+        }, this.autoClose * 1000);
       }
     },
     updateStyle() {
       this.$nextTick(() => {
-        this.$refs.line.style.height = `${
-          this.$refs.toast.getBoundingClientRect().height
-        }px`;
+        if (this.$refs.line) {
+          this.$refs.line.style.height = `${
+            this.$refs.toast.getBoundingClientRect().height
+          }px`;
+        }
       });
     },
     close() {
@@ -93,18 +93,34 @@ export default {
 $font-size: 14px;
 $toast-min-height: 40px;
 $toast-bg: rgba(0, 0, 0, 0.75);
-$animation-duration:300ms;
+$animation-duration: 300ms;
 @keyframes slide-up {
-  0% {opacity: 0;transform: translateY(100%);}
-  100% {opacity: 1;transform: translateY(0);}
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 @keyframes slide-down {
-  0% {opacity: 0;transform: translateY(-100%);}
-  100% {opacity: 1;transform: translateY(0);}
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 @keyframes fade-in {
-  0% {opacity: 0;}
-  100% {opacity: 1;}
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 .wrapper {
   position: fixed;
@@ -129,9 +145,8 @@ $animation-duration:300ms;
   &.position-middle {
     top: 50%;
     transform: translateX(-50%), translateY(-50%);
-    .toast{
-      animation: fade-in  $animation-duration;
-
+    .toast {
+      animation: fade-in $animation-duration;
     }
   }
 }
