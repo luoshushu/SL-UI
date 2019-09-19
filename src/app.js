@@ -32,18 +32,23 @@ new Vue({
     }
   },
   mounted() {
-    this.$toast('操作成功！！',{
-      position:'middle',
-      enableHtml:false,
-      closeButton:{
-        text:'知道了',
-        callback(){
-          console.log('回调'); 
-        }
-      },
-      autoClose:false,
-      autoCloseDelay:4,  
-      })
+  
+  },
+  methods: {
+    clickToast(){
+      this.$toast(`操作成功！！  ${parseInt(Math.random()*100) }`,{
+        position:'middle',
+        enableHtml:false,
+        closeButton:{
+          text:'知道了',
+          callback(){
+            console.log('回调'); 
+          }
+        },
+        autoClose:false,
+        autoCloseDelay:4,  
+        })
+    }
   },
 });
 

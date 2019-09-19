@@ -1,25 +1,23 @@
 // 用户主动使用Vue.use(plugin)
 import Toast from './toast'
+let currentToast
 export default {
   install(Vue,options){
     Vue.prototype.$toast = function(message,toastOptions){
-      let Constructor = Vue.extend(Toast)
-      let toast = new Constructor({
-        // propsData:{
-        //   closeButton:{
-        //     text:'我知道了',
-        //     callback(){
-        //       console.log('回调'); 
-        //     }
-        //   }
-        // }
-        propsData:toastOptions
-      })
-      toast.$slots.default = [message] //插槽
-      toast.$mount() //必须$mount()  手动地挂载一个未挂载的实例
-      document.body.appendChild(toast.$el)
-
-
+      if(currentToast){ currentToast.close()} //如果有Toast就删除上一个
+      currentToast = createToast({Vue,message,propsData:toastOptions})
     }
   }
+}
+
+
+
+// 帮助
+function createToast({Vue,message,propsData}){
+  let Constructor = Vue.extend(Toast)
+  let toast = new Constructor({propsData})
+  toast.$slots.default = [message] //插槽
+  toast.$mount() //必须$mount()  手动地挂载一个未挂载的实例
+  document.body.appendChild(toast.$el)
+  return toast
 }
