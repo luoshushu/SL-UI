@@ -28,7 +28,7 @@ describe('Toast', () => {
 
       })
     })
-    it('接收 closeButton', () => {
+    it('接收 closeButton', (done) => {
       const callback = sinon.fake(); //函数使用 sinon测试
       vm = new Constructor({
         propsData: {
@@ -40,9 +40,12 @@ describe('Toast', () => {
       }).$mount()
       let closeButton = vm.$el.querySelector('.close')
       expect(closeButton.textContent.trim()).to.equal('关闭哟'); //期待 html值等于 关闭哟
-      closeButton.click()
-      expect(callback).to.have.been.called
-      vm.$destroy(); //销毁
+      setTimeout(() => {
+        closeButton.click()
+        expect(callback).to.have.been.called
+        vm.$destroy(); //销毁
+        done()
+      }, 200);
     })
 
     it('接收 enableHtml', () => {
