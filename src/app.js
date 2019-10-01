@@ -5,6 +5,11 @@ import ButtonGroup from './button-group'
 import Input from './input'
 import Row from './row'
 import Col from './col'
+import Tabs from './tabs'
+import TabsPane from './tabs-pane'
+import TabsItem from './tabs-item'
+import TabsHead from './tabs-head'
+import TabsBody from './tabs-body'
 
 import plugin from './plugin'
 Vue.use(plugin)
@@ -16,11 +21,18 @@ Vue.component('sl-input',Input)
 Vue.component('sl-row',Row)
 Vue.component('sl-col',Col)
 
+Vue.component('sl-tabs',Tabs)
+Vue.component('sl-tabs-pane',TabsPane)
+Vue.component('sl-tabs-item',TabsItem)
+Vue.component('sl-tabs-gead',TabsHead)
+Vue.component('sl-tabs-body',TabsBody)
+
 
 
 new Vue({
   el: '#app',
   data:{
+    selectedTab:'1',
     loading1:false,
     loading2:false,
     something:'苏宋霖'

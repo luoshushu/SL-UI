@@ -41,10 +41,30 @@
 <body>
   <div id="app">
 
-    <button @click="clickToast1">Toast-top</button>
-    <button @click="clickToast2">Toast-middle</button>
-    <button @click="clickToast3">Toast-bottom</button>
-    <div style="border: 1px solid red; ">
+    <!-- <sl-tabs selected="selectedTab" @update:selected="selectedTab"> -->
+    <sl-tabs :selected.sync="selectedTab" selected>
+      <sl-tabs-head>
+        <template slot="acions">
+          设置
+        </template>
+        <sl-tabs-item naem="1">靓仔</sl-tabs-item>
+        <sl-tabs-item naem="2">财经</sl-tabs-item>
+        <sl-tabs-item naem="3">冲浪</sl-tabs-item>
+      </sl-tabs-head>
+      <sl-tabs-body>
+        <sl-tabs-pane naem="1">广西靓仔</sl-tabs-pane>
+        <sl-tabs-pane naem="2">相关财经</sl-tabs-pane>
+        <sl-tabs-pane naem="3">网速冲浪</sl-tabs-pane>
+      </sl-tabs-body>
+
+    </sl-tabs>
+
+    <div>
+      <sl-button @click="clickToast1">Toast-top</sl-button>
+      <sl-button @click="clickToast2">Toast-middle</sl-button>
+      <sl-button @click="clickToast3">Toast-bottom</sl-button>
+    </div>
+      <div style="border: 1px solid red; ">
 
 
 
@@ -60,10 +80,10 @@
     <div id="demo">hh</div>
   </sl-col>
 </sl-row> -->
-<sl-row gutter="20" align="left">
-  <sl-col span="12" >1 </sl-col>
-  <sl-col span="12" > 2</sl-col>
-</sl-row>
+  <sl-row gutter="20" align="left">
+    <sl-col span="12" >1 </sl-col>
+    <sl-col span="12" > 2</sl-col>
+  </sl-row>
 
     </div>
     <!-- <div>
