@@ -12,6 +12,7 @@ export default {
       type: String,
       required: true
     },
+    // 切换方向
     direction: {
       type: String,
       default: "horizontal",
@@ -31,7 +32,16 @@ export default {
     };
   },
   mounted() {
-    this.eventBus.$emit('update:selected',this.selected)
+    this.$children.forEach(vm => {
+      if(vm.$options.name === 'slTabsHead'){
+        vm.$children.forEach(childVm=>{
+          if(childVm.$options.name === 'slTabsItem' && childVm.name === this.selected){
+           this.eventBus.$emit('update:selected',this.selected,childVm)
+          }  
+        })
+      }
+      
+    });
     // console.log("eventBus", this.eventBus);
     // console.log("this", this);
     // this.$emit('update:selected',this)
