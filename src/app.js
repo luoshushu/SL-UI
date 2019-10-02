@@ -24,7 +24,7 @@ Vue.component('sl-col',Col)
 Vue.component('sl-tabs',Tabs)
 Vue.component('sl-tabs-pane',TabsPane)
 Vue.component('sl-tabs-item',TabsItem)
-Vue.component('sl-tabs-gead',TabsHead)
+Vue.component('sl-tabs-head',TabsHead)
 Vue.component('sl-tabs-body',TabsBody)
 
 

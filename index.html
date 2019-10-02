@@ -26,7 +26,7 @@
     }
 
     #app {
-      margin: 20px;
+      /* margin: 20px; */
     }
   </style>
   <style>
@@ -41,35 +41,34 @@
 <body>
   <div id="app">
 
-    <!-- <sl-tabs selected="selectedTab" @update:selected="selectedTab"> -->
-    <sl-tabs :selected.sync="selectedTab" selected>
-      <sl-tabs-head>
-        <template slot="acions">
-          设置
-        </template>
-        <sl-tabs-item naem="1">靓仔</sl-tabs-item>
-        <sl-tabs-item naem="2">财经</sl-tabs-item>
-        <sl-tabs-item naem="3">冲浪</sl-tabs-item>
-      </sl-tabs-head>
-      <sl-tabs-body>
-        <sl-tabs-pane naem="1">广西靓仔</sl-tabs-pane>
-        <sl-tabs-pane naem="2">相关财经</sl-tabs-pane>
-        <sl-tabs-pane naem="3">网速冲浪</sl-tabs-pane>
-      </sl-tabs-body>
-
-    </sl-tabs>
-
     <div>
+
+      <!-- <sl-tabs selected="selectedTab" @update:selected="selectedTab"> -->
+        <sl-tabs :selected.sync="selectedTab" >
+          <sl-tabs-head>
+            <template slot="acions">设置</template>
+            <sl-tabs-item name="1">靓仔</sl-tabs-item>
+            <sl-tabs-item name="2">财经</sl-tabs-item>
+            <sl-tabs-item name="3">冲浪</sl-tabs-item>
+          </sl-tabs-head>
+          <sl-tabs-body>
+            <sl-tabs-pane name="1">广西靓仔</sl-tabs-pane>
+            <sl-tabs-pane name="2">相关财经</sl-tabs-pane>
+            <sl-tabs-pane name="3">网速冲浪</sl-tabs-pane>
+          </sl-tabs-body>
+          
+        </sl-tabs>
+        
+      </div>
+    <!-- <div>
       <sl-button @click="clickToast1">Toast-top</sl-button>
       <sl-button @click="clickToast2">Toast-middle</sl-button>
       <sl-button @click="clickToast3">Toast-bottom</sl-button>
-    </div>
-      <div style="border: 1px solid red; ">
+    </div> -->
 
 
-
-
-<!-- <sl-row >
+  <!-- <div style="border: 1px solid red; ">
+<sl-row >
   <sl-col :span="24" :narrow-pc="{span:8}" :ipad="{span:8}">
     <div id="demo">hh</div>
   </sl-col>
@@ -79,13 +78,13 @@
   <sl-col :span="24" :narrow-pc="{span:8}" :ipad="{span:8}">
     <div id="demo">hh</div>
   </sl-col>
-</sl-row> -->
+</sl-row>
   <sl-row gutter="20" align="left">
     <sl-col span="12" >1 </sl-col>
     <sl-col span="12" > 2</sl-col>
   </sl-row>
 
-    </div>
+    </div> -->
     <!-- <div>
       <sl-input v-model="something" @change="inputChange"></sl-input>
       {{something}}
