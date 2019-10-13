@@ -45,6 +45,13 @@ export default {
 
 
 ## 文档
+ ### 已完成组件
+ - [x] 按钮Button
+ - [x] 输入框Input
+ - [x] 图标Icon
+ - [x] 网格布局Row/Col
+ - [x] 吐司Toast
+ - [x] 标签页Tabs
 ## 提问
 ## 变更记录
 ## 联系方式
