@@ -32,6 +32,9 @@ export default {
     };
   },
   mounted() {
+    if(this.$children.length === 0){
+     console && console.warn && console.warn('tabs的子组件必须是tabs-head和tabs-body,但你没有写子组件');
+    }
     this.$children.forEach(vm => {
       if(vm.$options.name === 'slTabsHead'){
         vm.$children.forEach(childVm=>{
@@ -42,9 +45,6 @@ export default {
       }
       
     });
-    // console.log("eventBus", this.eventBus);
-    // console.log("this", this);
-    // this.$emit('update:selected',this)
   }
 };
 </script>
