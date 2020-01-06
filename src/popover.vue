@@ -1,7 +1,7 @@
 <template>
   <div id="slPopover" @click.stop="onClick" ref="popover">
-    <div class="content-wrapper" ref="contentWrapper" v-if="visible" @click.stop>
       <!-- 阻止冒泡 -->
+    <div class="content-wrapper" ref="contentWrapper" v-if="visible" @click.stop>
       <slot name="content"></slot>
     </div>
     <span ref="triggerWrapper">
@@ -13,10 +13,22 @@
 <script>
 export default {
   name: "slPopover",
+  props:{
+    value:Boolean
+  },
   data() {
     return {
       visible: false
     };
+  },
+  watch: {
+    value:{
+      immediate:true,
+      handler(val){
+        this.visible = val;
+        this.$emit('input', val);
+      }
+    }
   },
   methods: {
     // 定位
@@ -24,8 +36,8 @@ export default {
       document.body.appendChild(this.$refs.contentWrapper);
       let {width,height,top,left} = this.$refs.triggerWrapper.getBoundingClientRect();
       //   window.scrollX 解决有滚动条的情况下，定位不准的问题
-      this.$refs.contentWrapper.top = top + window.scrollX + "px";
-      this.$refs.contentWrapper.left = left + window.screenY + "px";
+      this.$refs.contentWrapper.style.top = top + window.scrollX + "px";
+      this.$refs.contentWrapper.style.left = left + window.screenY + "px";
     },
     onClickDocument(e){
         if ( this.$refs.popover && (this.$refs.popover === e.target ||  this.$refs.popover.contains(e.target))) return;
@@ -59,8 +71,10 @@ export default {
 
 <style scoped lang="scss">
 #slPopover {
+  position: relative;
 }
 .content-wrapper {
+  position: absolute;
   border: 1px solid red;
   transform: translateY(-100%);
 }

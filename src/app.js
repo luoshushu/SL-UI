@@ -38,7 +38,8 @@ new Vue({
     selectedTab:'1',
     loading1:false,
     loading2:false,
-    something:'苏宋霖'
+    something:'苏宋霖',
+    isPopover:false
   },
   methods: {
     inputChange(e){
