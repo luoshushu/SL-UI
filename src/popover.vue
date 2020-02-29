@@ -49,24 +49,29 @@ export default {
       const { contentWrapper, triggerWrapper } = this.$refs;
       document.body.appendChild(contentWrapper);
       let { width, height, top, left } = triggerWrapper.getBoundingClientRect();
-      //   window.scrollX 解决有滚动条的情况下，定位不准的问题
-      if (this.position === "top") {
-        contentWrapper.style.top = top + window.scrollY + "px";
-        contentWrapper.style.left = left + window.screenX + "px";
-      } else if (this.position === "bottom") {
-        contentWrapper.style.top = top + height + window.scrollY + "px";
-        contentWrapper.style.left = left + window.screenX + "px";
-      } else if (this.position === "left") {
-        contentWrapper.style.left = left + window.screenX + "px";
-        let { height: height2 } = contentWrapper.getBoundingClientRect();
-        contentWrapper.style.top =
-          top + window.scrollY + (height - height2) / 2 + "px";
-      } else if (this.position === "right") {
-        contentWrapper.style.left = left + window.screenX + width + "px";
-        let { height: height2 } = contentWrapper.getBoundingClientRect();
-        contentWrapper.style.top =
-          top + window.scrollY + (height - height2) / 2 + "px";
+      let { height: height2 } = contentWrapper.getBoundingClientRect();
+        //   window.scrollX 解决有滚动条的情况下，定位不准的问题
+      let a = {
+        top:{
+          top:top + window.scrollY,
+          left:left + window.screenX
+        },
+        bottom:{
+          top:top + height + window.scrollY,
+          left:left + window.screenX
+        },
+        left:{
+          top:top + window.scrollY + (height - height2) / 2 ,
+          left:left + window.screenX 
+        },
+        right:{
+          top:top + window.scrollY + (height - height2) / 2,
+          left:left + window.screenX + width
+        },
       }
+      contentWrapper.style.top = a[this.position].top + 'px'
+      contentWrapper.style.left = a[this.position].left + 'px'
+  
     },
     onClickDocument(e) {
       if (
