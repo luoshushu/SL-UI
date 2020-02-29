@@ -1,5 +1,5 @@
 <template>
-  <div id="slPopover" @click.stop="onClick" ref="popover">
+  <div id="slPopover" ref="popover">
     <!-- 阻止冒泡 -->
     <div
       class="content-wrapper"
@@ -27,6 +27,13 @@ export default {
       validator(value) {
         return ["top", "bottom", "left", "right"].indexOf(value) >= 0;
       }
+    },
+    trigger: {
+      type: String,
+      default: "click",
+      validator(value) {
+        return ["click", "hover"].indexOf(value) >= 0;
+      }
     }
   },
   data() {
@@ -43,6 +50,24 @@ export default {
       }
     }
   },
+  mounted() {
+    const {popover} = this.$refs
+    if (this.trigger === "click") {
+      popover.addEventListener("click", this.onClick);
+    } else {
+      popover.addEventListener("mouseenter", this.open);
+      popover.addEventListener("mouseleave", this.close);
+    }
+  },
+  deactivated() {
+    const {popover} = this.$refs
+    if (this.trigger === "click") {
+        popover.removeEventListener("click", this.onClick);
+    } else {
+        popover.removeEventListener("mouseenter", this.open);
+        popover.removeÎEventListener("mouseleave", this.close);
+    }
+  },
   methods: {
     // 定位
     positionContent() {
@@ -50,28 +75,27 @@ export default {
       document.body.appendChild(contentWrapper);
       let { width, height, top, left } = triggerWrapper.getBoundingClientRect();
       let { height: height2 } = contentWrapper.getBoundingClientRect();
-        //   window.scrollX 解决有滚动条的情况下，定位不准的问题
+      //   window.scrollX 解决有滚动条的情况下，定位不准的问题
       let a = {
-        top:{
-          top:top + window.scrollY,
-          left:left + window.screenX
+        top: {
+          top: top + window.scrollY,
+          left: left + window.screenX
         },
-        bottom:{
-          top:top + height + window.scrollY,
-          left:left + window.screenX
+        bottom: {
+          top: top + height + window.scrollY,
+          left: left + window.screenX
         },
-        left:{
-          top:top + window.scrollY + (height - height2) / 2 ,
-          left:left + window.screenX 
+        left: {
+          top: top + window.scrollY + (height - height2) / 2,
+          left: left + window.screenX
         },
-        right:{
-          top:top + window.scrollY + (height - height2) / 2,
-          left:left + window.screenX + width
-        },
-      }
-      contentWrapper.style.top = a[this.position].top + 'px'
-      contentWrapper.style.left = a[this.position].left + 'px'
-  
+        right: {
+          top: top + window.scrollY + (height - height2) / 2,
+          left: left + window.screenX + width
+        }
+      };
+      contentWrapper.style.top = a[this.position].top + "px";
+      contentWrapper.style.left = a[this.position].left + "px";
     },
     onClickDocument(e) {
       if (

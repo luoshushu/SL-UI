@@ -62,19 +62,38 @@
       </div>
 
       <div style="margin:100px">
-        <sl-popover v-model="isPopover" position="top">
+        <sl-popover v-model="isPopover" position="top" trigger="click">
           <div slot="content"> 哈哈哈哈</div>
           <sl-button>点击在上</sl-button>
         </sl-popover>
-        <sl-popover v-model="isPopover"  position="bottom">
+        <sl-popover v-model="isPopover"  position="bottom" trigger="click">
           <div slot="content"> 哈哈哈哈</div>
           <sl-button>点击在下</sl-button>
         </sl-popover>
-        <sl-popover v-model="isPopover"  position="left">
+        <sl-popover v-model="isPopover"  position="left" trigger="click">
           <div slot="content"> 哈哈哈哈</div>
           <sl-button>点击在左</sl-button>
         </sl-popover>
-        <sl-popover v-model="isPopover"  position="right">
+        <sl-popover v-model="isPopover"  position="right" trigger="click">
+          <div slot="content"> 哈哈哈哈</div>
+          <sl-button>点击在右</sl-button>
+        </sl-popover>
+      </div>
+
+      <div style="margin:100px">
+        <sl-popover v-model="isPopover" position="top" trigger="hover">
+          <div slot="content"> 哈哈哈哈</div>
+          <sl-button>点击在上</sl-button>
+        </sl-popover>
+        <sl-popover v-model="isPopover"  position="bottom" trigger="hover">
+          <div slot="content"> 哈哈哈哈</div>
+          <sl-button>点击在下</sl-button>
+        </sl-popover>
+        <sl-popover v-model="isPopover"  position="left" trigger="hover">
+          <div slot="content"> 哈哈哈哈</div>
+          <sl-button>点击在左</sl-button>
+        </sl-popover>
+        <sl-popover v-model="isPopover"  position="right" trigger="hover">
           <div slot="content"> 哈哈哈哈</div>
           <sl-button>点击在右</sl-button>
         </sl-popover>
