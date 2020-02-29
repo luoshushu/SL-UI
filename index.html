@@ -62,9 +62,21 @@
       </div>
 
       <div style="margin:100px">
-        <sl-popover v-model="isPopover">
-          <div slot="content"> 哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</div>
-          <sl-button>点击</sl-button>
+        <sl-popover v-model="isPopover" position="top">
+          <div slot="content"> 哈哈哈哈</div>
+          <sl-button>点击在上</sl-button>
+        </sl-popover>
+        <sl-popover v-model="isPopover"  position="bottom">
+          <div slot="content"> 哈哈哈哈</div>
+          <sl-button>点击在下</sl-button>
+        </sl-popover>
+        <sl-popover v-model="isPopover"  position="left">
+          <div slot="content"> 哈哈哈哈</div>
+          <sl-button>点击在左</sl-button>
+        </sl-popover>
+        <sl-popover v-model="isPopover"  position="right">
+          <div slot="content"> 哈哈哈哈</div>
+          <sl-button>点击在右</sl-button>
         </sl-popover>
       </div>
     <!-- <div>
