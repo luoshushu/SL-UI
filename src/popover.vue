@@ -51,7 +51,7 @@ export default {
     }
   },
   mounted() {
-    const {popover} = this.$refs
+    const { popover } = this.$refs;
     if (this.trigger === "click") {
       popover.addEventListener("click", this.onClick);
     } else {
@@ -60,12 +60,12 @@ export default {
     }
   },
   deactivated() {
-    const {popover} = this.$refs
+    const { popover } = this.$refs;
     if (this.trigger === "click") {
-        popover.removeEventListener("click", this.onClick);
+      popover.removeEventListener("click", this.onClick);
     } else {
-        popover.removeEventListener("mouseenter", this.open);
-        popover.removeÎEventListener("mouseleave", this.close);
+      popover.removeEventListener("mouseenter", this.open);
+      popover.removeÎEventListener("mouseleave", this.close);
     }
   },
   methods: {
@@ -165,6 +165,7 @@ $border-radius: 4px;
     &::before,
     &::after {
       left: 10px;
+      border-bottom: none;
     }
     &::before {
       top: 100%;
@@ -180,6 +181,7 @@ $border-radius: 4px;
     &::before,
     &::after {
       left: 10px;
+      border-top: none;
     }
     &::before {
       bottom: 100%;
@@ -195,6 +197,7 @@ $border-radius: 4px;
     transform: translateX(-100%);
     &::before,
     &::after {
+      border-right: none;
       top: 50%;
       transform: translateY(-50%);
     }
@@ -211,6 +214,7 @@ $border-radius: 4px;
     margin-left: 10px;
     &::before,
     &::after {
+      border-left: none;
       top: 50%;
       transform: translateY(-50%);
     }
