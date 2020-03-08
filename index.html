@@ -71,7 +71,12 @@
           <sl-button>点击在下</sl-button>
         </sl-popover>
         <sl-popover v-model="isPopover"  position="left" trigger="click">
-          <div slot="content"> 哈哈哈哈</div>
+          <div slot="content" slot-scope="{close}" > 
+            <div> 哈哈哈哈哈哈哈哈哈哈哈哈</div>
+            <div> 哈哈哈哈哈哈哈哈哈哈哈哈</div>
+            <div> 哈哈哈哈哈哈哈哈哈哈哈哈</div>
+            <sl-button @click="close">关闭</sl-button>
+          </div>
           <sl-button>点击在左</sl-button>
         </sl-popover>
         <sl-popover v-model="isPopover"  position="right" trigger="click">
