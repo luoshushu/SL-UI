@@ -85,7 +85,7 @@
         </sl-popover>
       </div>
 
-      <div style="margin:100px">
+      <!-- <div style="margin:100px">
         <sl-popover v-model="isPopover" position="top" trigger="hover">
           <div slot="content"> 哈哈哈哈</div>
           <sl-button>点击在上</sl-button>
@@ -102,8 +102,18 @@
           <div slot="content"> 哈哈哈哈</div>
           <sl-button>点击在右</sl-button>
         </sl-popover>
-      </div>
-    <!-- <div>
+      </div> -->
+    <div style="margin:100px;">
+      <sl-collapse>
+        
+        <sl-collapse-item title="标题啦1">内容啦1</sl-collapse-item>
+        <sl-collapse-item title="标题啦2">内容2</sl-collapse-item>
+        <sl-collapse-item title="标题啦333">112313</sl-collapse-item>
+        <!-- <sl-collapse-item title="标题啦4">内容啦4</sl-collapse-item> -->
+      </sl-collapse>
+    </div>
+ 
+      <!-- <div>
       <sl-button @click="clickToast1">Toast-top</sl-button>
       <sl-button @click="clickToast2">Toast-middle</sl-button>
       <sl-button @click="clickToast3">Toast-bottom</sl-button>

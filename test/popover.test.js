@@ -30,6 +30,10 @@ describe('Popover', () => {
             })
         })
     })
+
+    xit('设置trigger ',()=>{
+        // 暂时跳过
+    })
     //  it('可设置v-model', () => {
     //      const Constructor = Vue.extend(Popover)
     //      const vm = new Constructor({}).$mount()

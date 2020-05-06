@@ -12,6 +12,8 @@ import TabsHead from './tabs-head'
 import TabsBody from './tabs-body'
 
 import Popover from './popover'
+import Collapse from './collapse'
+import CollapseItem from './collapse-item'
 
 import plugin from './plugin'
 Vue.use(plugin)
@@ -30,7 +32,8 @@ Vue.component('sl-tabs-head',TabsHead)
 Vue.component('sl-tabs-body',TabsBody)
 
 Vue.component('sl-popover',Popover)
-
+Vue.component('sl-collapse',Collapse)
+Vue.component('sl-collapse-item',CollapseItem)
 
 new Vue({
   el: '#app',
