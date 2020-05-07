@@ -42,7 +42,8 @@ new Vue({
     loading1:false,
     loading2:false,
     something:'苏宋霖',
-    isPopover:false
+    isPopover:false,
+    collapseTab:'2'
   },
   methods: {
     inputChange(e){

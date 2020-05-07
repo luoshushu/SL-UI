@@ -1,6 +1,6 @@
 <template>
     <div id="collapse-item" >
-      <div class="title">
+      <div class="title" @click="toggle">
         {{title}}
       </div>
       <div class="content" v-if="open"> 
@@ -13,8 +13,13 @@
 export default {
     name:"slCollapseItem",
     components: {},
+    inject:['eventBus'],
     props: {
       title:{
+        type:String,
+        required:true
+      },
+      name:{
         type:String,
         required:true
       }
@@ -28,8 +33,31 @@ export default {
     computed: {},
     watch: { },
     created() { },
-    mounted() { },
-    methods: { },
+    mounted() { 
+      this.eventBus && this.eventBus.$on('update:selected',(name)=>{
+          if(name !== this.name){
+            this.close()
+          }else{
+            this.show()
+          }
+      })
+    },
+    methods: {
+      toggle(){
+        if(this.open){
+          this.open = false
+        }else{
+          this.eventBus && this.eventBus.$emit('update:selected',this.name)
+        }
+      },
+      // 关闭
+      close(){
+        this.open = false
+      },
+      show(){
+        this.open = true
+      }
+     },
 };
 </script>
 
