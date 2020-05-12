@@ -43,7 +43,7 @@ new Vue({
     loading2:false,
     something:'苏宋霖',
     isPopover:false,
-    collapseTab:'2'
+    collapseTab:['2']
   },
   methods: {
     inputChange(e){
