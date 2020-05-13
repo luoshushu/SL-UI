@@ -29,9 +29,6 @@ export default {
       eventBus: this.eventBus
     };
   },
-  computed: {},
-  watch: {},
-  created() {},
   mounted() {
     this.eventBus.$emit("update:selected", this.selected);
     this.eventBus.$on('update:addSelected',(name)=>{
