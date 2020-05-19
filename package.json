@@ -6,7 +6,9 @@
   "scripts": {
     "dev-test": "parcel watch test/* --no-cache & karma start",
     "test": "parcel build test/* --no-cache  --no-minify && karma start --single-run",
-    "parcel": "npx parcel index.html --no-cache"
+    "parcel": "npx parcel index.html --no-cache",
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
   },
   "repository": {
     "type": "git",
@@ -23,10 +25,12 @@
   },
   "homepage": "https://github.com/luoshushu/SL-Ul#readme",
   "dependencies": {
-    "vue": "^2.6.10",
+    "vue": "^2.6.11",
     "vue-hot-reload-api": "^2.3.3"
   },
   "devDependencies": {
+    "vue-server-renderer": "^2.6.11",
+    "vue-router": "*",
     "@vue/component-compiler-utils": "^3.0.0",
     "chai": "^4.2.0",
     "chai-spies": "^1.0.0",
@@ -41,7 +45,8 @@
     "parcel-bundler": "^1.9.2",
     "sinon": "^7.3.2",
     "sinon-chai": "^3.3.0",
-    "vue-template-compiler": "^2.6.10"
+    "vue-template-compiler": "^2.6.11",
+    "vuepress": "^1.5.0"
   },
   "alias": {
     "vue": "./node_modules/vue/dist/vue.common.js"
