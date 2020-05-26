@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/luoshushu/SL-Ul.git"
+    "url": "git+https://github.com/luoshushu/SL-UI.git"
   },
   "keywords": [
     "vue",
@@ -21,9 +21,9 @@
   "author": "苏宋霖",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/luoshushu/SL-Ul/issues"
+    "url": "https://github.com/luoshushu/SL-UI/issues"
   },
-  "homepage": "https://github.com/luoshushu/SL-Ul#readme",
+  "homepage": "https://github.com/luoshushu/SL-UI#readme",
   "dependencies": {
     "vue": "^2.6.11",
     "vue-hot-reload-api": "^2.3.3"
@@ -44,7 +44,7 @@
     "sass-loader": "^8.0.2",
     "sinon": "^7.3.2",
     "sinon-chai": "^3.3.0",
-    "vue-router": "*",
+    "vue-router": "^3.2.0",
     "vue-server-renderer": "^2.6.11",
     "vue-template-compiler": "^2.6.11",
     "vuepress": "^1.5.0"
