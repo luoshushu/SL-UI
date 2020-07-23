@@ -30,7 +30,7 @@
     }
   </style>
   <style>
-    #demo{
+    #demo {
       background: darkseagreen;
       height: 100px;
       border: 1px solid red;
@@ -44,48 +44,48 @@
     <div>
 
       <!-- <sl-tabs selected="selectedTab" @update:selected="selectedTab"> -->
-        <sl-tabs :selected.sync="selectedTab" >
-          <sl-tabs-head>
-            <template slot="acions">设置</template>
-            <sl-tabs-item name="1">靓仔</sl-tabs-item>
-            <sl-tabs-item name="2" disabled>财经</sl-tabs-item>
-            <sl-tabs-item name="3">冲浪</sl-tabs-item>
-          </sl-tabs-head>
-          <sl-tabs-body>
-            <sl-tabs-pane name="1">广西靓仔</sl-tabs-pane>
-            <sl-tabs-pane name="2">相关财经</sl-tabs-pane>
-            <sl-tabs-pane name="3">网速冲浪</sl-tabs-pane>
-          </sl-tabs-body>
-          
-        </sl-tabs>
-        
-      </div>
+      <sl-tabs :selected.sync="selectedTab">
+        <sl-tabs-head>
+          <template slot="acions">设置</template>
+          <sl-tabs-item name="1">靓仔</sl-tabs-item>
+          <sl-tabs-item name="2" disabled>财经</sl-tabs-item>
+          <sl-tabs-item name="3">冲浪</sl-tabs-item>
+        </sl-tabs-head>
+        <sl-tabs-body>
+          <sl-tabs-pane name="1">广西靓仔</sl-tabs-pane>
+          <sl-tabs-pane name="2">相关财经</sl-tabs-pane>
+          <sl-tabs-pane name="3">网速冲浪</sl-tabs-pane>
+        </sl-tabs-body>
 
-      <div style="margin:100px">
-        <sl-popover v-model="isPopover" position="top" trigger="click">
-          <div slot="content"> 哈哈哈哈</div>
-          <sl-button>点击在上</sl-button>
-        </sl-popover>
-        <sl-popover v-model="isPopover"  position="bottom" trigger="click">
-          <div slot="content"> 哈哈哈哈</div>
-          <sl-button>点击在下</sl-button>
-        </sl-popover>
-        <sl-popover v-model="isPopover"  position="left" trigger="click">
-          <div slot="content" slot-scope="{close}" > 
-            <div> 哈哈哈哈哈哈哈哈哈哈哈哈</div>
-            <div> 哈哈哈哈哈哈哈哈哈哈哈哈</div>
-            <div> 哈哈哈哈哈哈哈哈哈哈哈哈</div>
-            <sl-button @click="close">关闭</sl-button>
-          </div>
-          <sl-button>点击在左</sl-button>
-        </sl-popover>
-        <sl-popover v-model="isPopover"  position="right" trigger="click">
-          <div slot="content"> 哈哈哈哈</div>
-          <sl-button>点击在右</sl-button>
-        </sl-popover>
-      </div>
+      </sl-tabs>
 
-      <!-- <div style="margin:100px">
+    </div>
+
+    <div style="margin:100px">
+      <sl-popover v-model="isPopover" position="top" trigger="click">
+        <div slot="content"> 哈哈哈哈</div>
+        <sl-button>点击在上</sl-button>
+      </sl-popover>
+      <sl-popover v-model="isPopover" position="bottom" trigger="click">
+        <div slot="content"> 哈哈哈哈</div>
+        <sl-button>点击在下</sl-button>
+      </sl-popover>
+      <sl-popover v-model="isPopover" position="left" trigger="click">
+        <div slot="content" slot-scope="{close}">
+          <div> 哈哈哈哈哈哈哈哈哈哈哈哈</div>
+          <div> 哈哈哈哈哈哈哈哈哈哈哈哈</div>
+          <div> 哈哈哈哈哈哈哈哈哈哈哈哈</div>
+          <sl-button @click="close">关闭</sl-button>
+        </div>
+        <sl-button>点击在左</sl-button>
+      </sl-popover>
+      <sl-popover v-model="isPopover" position="right" trigger="click">
+        <div slot="content"> 哈哈哈哈</div>
+        <sl-button>点击在右</sl-button>
+      </sl-popover>
+    </div>
+
+    <!-- <div style="margin:100px">
         <sl-popover v-model="isPopover" position="top" trigger="hover">
           <div slot="content"> 哈哈哈哈</div>
           <sl-button>点击在上</sl-button>
@@ -112,42 +112,43 @@
       </sl-collapse>
       {{collapseTab}}
     </div>
- 
-      <!-- <div>
+
+    <div>
       <sl-button @click="clickToast1">Toast-top</sl-button>
       <sl-button @click="clickToast2">Toast-middle</sl-button>
       <sl-button @click="clickToast3">Toast-bottom</sl-button>
-    </div> -->
+    </div>
 
 
-  <!-- <div style="border: 1px solid red; ">
-<sl-row >
-  <sl-col :span="24" :narrow-pc="{span:8}" :ipad="{span:8}">
-    <div id="demo">hh</div>
-  </sl-col>
-  <sl-col :span="24" :narrow-pc="{span:8}" :ipad="{span:8}">
-    <div id="demo">hh</div>
-  </sl-col>
-  <sl-col :span="24" :narrow-pc="{span:8}" :ipad="{span:8}">
-    <div id="demo">hh</div>
-  </sl-col>
-</sl-row>
-  <sl-row gutter="20" align="left">
-    <sl-col span="12" >1 </sl-col>
-    <sl-col span="12" > 2</sl-col>
-  </sl-row>
+    <div style="border: 1px solid red; ">
+      <sl-row>
+        <sl-col :span="24" :narrow-pc="{span:8}" :ipad="{span:8}">
+          <div id="demo">hh</div>
+        </sl-col>
+        <sl-col :span="24" :narrow-pc="{span:8}" :ipad="{span:8}">
+          <div id="demo">hh</div>
+        </sl-col>
+        <sl-col :span="24" :narrow-pc="{span:8}" :ipad="{span:8}">
+          <div id="demo">hh</div>
+        </sl-col>
+      </sl-row>
+      <sl-row gutter="20" align="left">
+        <sl-col span="12">1 </sl-col>
+        <sl-col span="12"> 2</sl-col>
+      </sl-row>
 
-    </div> -->
-    <!-- <div>
+    </div>
+    
+    <div>
       <sl-input v-model="something" @change="inputChange"></sl-input>
       {{something}}
     </div>
 
     <sl-input value="苏宋霖" disabled></sl-input>
     <sl-input value="苏先生" readonly></sl-input>
-    <sl-input value="苏" error="名字不能输入一个字"></sl-input> -->
+    <sl-input value="苏" error="名字不能输入一个字"></sl-input>
 
-    <!-- <div style="margin:15px 0">
+    <div style="margin:15px 0">
       <sl-button>我不爱css </sl-button>
       <sl-button @click=" loading1 = !loading1" icon="xiazai" :loading="loading1" icon-position="left">我不爱css
       </sl-button>
@@ -157,7 +158,7 @@
         <sl-button icon-position="right">更多</sl-button>
         <sl-button icon="next" icon-position="right">下一页</sl-button>
       </sl-button-group>
-    </div> -->
+    </div>
   </div>
   <div id="test"></div>
   <script src="./src/app.js"></script>
