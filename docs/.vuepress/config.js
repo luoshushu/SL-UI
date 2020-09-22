@@ -16,7 +16,15 @@ module.exports = {
       },
       {
         title:'组件',
-        children:['/components/Button.md']
+        children:[
+          '/components/Button.md',
+          '/components/Input.md',
+          '/components/Row-col.md',
+          '/components/Toast.md',
+          '/components/Collapse.md',
+          '/components/Popover.md',
+          '/components/Tabs.md',
+      ]
       },
 
       // '/',

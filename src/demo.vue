@@ -40,6 +40,7 @@
         <sl-button>点击在右</sl-button>
       </sl-popover>
     </div>
+
     <div class="box">
       <div class="title">collapse</div>
       <sl-collapse :selected.sync="collapseTab" :single="false">
@@ -51,12 +52,14 @@
         <sl-collapse-item name="3" title="标题啦333">前端入门和进阶学习笔记。从零开始学前端，做一名精致的前端工程师。</sl-collapse-item>
       </sl-collapse>
     </div>
+
     <div class="box">
       <div class="title">Toast</div>
       <sl-button @click="clickToast1">Toast-top</sl-button>
       <sl-button @click="clickToast2">Toast-middle</sl-button>
       <sl-button @click="clickToast3">Toast-bottom</sl-button>
     </div>
+    
     <div class="box">
       <div class="title">网格布局Row/Col</div>
       <sl-row>
