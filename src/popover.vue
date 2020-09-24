@@ -2,7 +2,7 @@
   <div id="slPopover" ref="popover">
     <!-- 阻止冒泡 -->
     <div
-      class="content-wrapper"
+      class="sl-content-wrapper"
       :class="{[`position-${position}`]:true}"
       ref="contentWrapper"
       v-if="visible"
@@ -140,7 +140,7 @@ $border-radius: 4px;
   vertical-align: top;
   position: relative;
 }
-.content-wrapper {
+.sl-content-wrapper {
   position: absolute;
   border: 1px solid $border-color;
   border-radius: $border-radius;

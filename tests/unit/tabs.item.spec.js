@@ -1,19 +1,22 @@
-const expect = chai.expect;
+
  import Vue from 'vue'
 
-import Tabs from '../src/tabs'
-import TabsPane from '../src/tabs-pane'
-import TabsItem from '../src/tabs-item'
-import TabsHead from '../src/tabs-head'
-import TabsBody from '../src/tabs-body'
-
- Vue.config.productionTip = false
- Vue.config.devtools = false;
+import Tabs from '../../src/tabs'
+import TabsPane from '../../src/tabs-pane'
+import TabsItem from '../../src/tabs-item'
+import TabsHead from '../../src/tabs-head'
+import TabsBody from '../../src/tabs-body'
  Vue.component('sl-tabs',Tabs)
  Vue.component('sl-tabs-pane',TabsPane)
  Vue.component('sl-tabs-item',TabsItem)
  Vue.component('sl-tabs-head',TabsHead)
  Vue.component('sl-tabs-body',TabsBody)
+
+ import chai, { expect } from 'chai'
+import sinon from 'sinon'
+import sinonChai from 'sinon-chai'
+import { shallowMount, mount } from '@vue/test-utils'
+chai.use(sinonChai)
 
  describe('TabsItem', () => {
     //  BDD 行为驱动测试

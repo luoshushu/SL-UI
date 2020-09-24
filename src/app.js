@@ -45,12 +45,7 @@ new Vue({
     isPopover:false,
     collapseTab:['2']
   },
-  methods: {
-    inputChange(e){
-      console.log('inputChange');
-      console.log(e);
-    }
-  },
+
   mounted() {
   
   },

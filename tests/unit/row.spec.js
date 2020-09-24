@@ -1,10 +1,14 @@
-const expect = chai.expect;
-import Vue from 'vue'
-import Row from '../src/row'
-import Col from '../src/col'
 
-Vue.config.productionTip = false
-Vue.config.devtools = false
+import Vue from 'vue'
+import Row from '../../src/row'
+import Col from '../../src/col'
+import chai, { expect } from 'chai'
+import sinon from 'sinon'
+import sinonChai from 'sinon-chai'
+import { shallowMount, mount } from '@vue/test-utils'
+Vue.component('sl-row', Row)
+Vue.component('sl-col', Col)
+chai.use(sinonChai)
 
 /**
  * mocha 提供 describe it
@@ -17,9 +21,8 @@ describe('Row', () => {
     it('存在.', () => {
         expect(Row).to.exist;
     })
-    it('接收 gutter 属性', (done) => {//done 异步执行 没有done为同步执行
-        Vue.component('sl-row', Row)
-        Vue.component('sl-col', Col)
+    it('接收 gutter 属性', async (done) => {//done 异步执行 没有done为同步执行
+     
         const div = document.createElement('div')
         document.body.appendChild(div)
         div.innerHTML = `
@@ -31,17 +34,18 @@ describe('Row', () => {
         const vm = new Vue({
             el: div
         })
-        setTimeout(() => {
+        vm.$nextTick(()=>{
             const rows = vm.$el.querySelectorAll('.row')
             expect(getComputedStyle(rows[0]).marginLeft).to.eq('-10px');
             expect(getComputedStyle(rows[0]).marginRight).to.eq('-10px');
             const cols = vm.$el.querySelectorAll('.col')            
             expect(getComputedStyle(cols[0]).paddingRight).to.eq('10px');
             expect(getComputedStyle(cols[1]).paddingLeft).to.eq('10px');
-            done()
+            // done()
             vm.$el.remove()
             vm.$destroy()
-        });
+        })
+
 
     })
     it('接收 align 属性',()=>{

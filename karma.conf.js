@@ -1,69 +1,31 @@
- // 新建 karma.conf.js，内容如下
- module.exports = function (config) {
+
+var webpackConfig = require('@vue/cli-service/webpack.config.js')
+const path = require('path')
+
+module.exports = function (config) {
   config.set({
+    frameworks: ['mocha'],
 
-      // base path that will be used to resolve all patterns (eg. files, exclude)
-      basePath: '',
-         // frameworks to use
-         // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-         frameworks: ['mocha', 'sinon-chai'], //使用 mocha sinon-chai
-         client: {
-             chai: {
-                 includeStack: true
-             }
-         },
+    files: [
+      'tests/**/*.spec.js'
+    ],
 
+    preprocessors: {
+      '**/*.spec.js': ['webpack', 'sourcemap']
+    },
 
-         // list of files / patterns to load in the browser
-         files: [
-             'dist/**/*.test.js', //dist下所有的.test.js文件 包含多层文件中的.test.js
-             'dist/**/*.test.css',
-         ],
+    webpack: webpackConfig,
 
+    reporters: ['spec', 'coverage'],
+    coverageReporter: {
+      dir: './coverage',
+      reporters: [
+        { type: 'lcov', subdir: '.' },
+        { type: 'text-summary' }
+      ]
+    },
+    autoWatch: true,
 
-         // list of files / patterns to exclude
-         exclude: [],
-
-
-         // preprocess matching files before serving them to the browser
-         // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
-         preprocessors: {},
-
-
-         // test results reporter to use
-         // possible values: 'dots', 'progress'
-         // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-         reporters: ['progress'], //控制台打印
-
-
-         // web server port
-         port: 9876,
-
-
-         // enable / disable colors in the output (reporters and logs)
-         colors: true,
-
-
-         // level of logging
-         // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
-         logLevel: config.LOG_INFO,
-
-
-         // enable / disable watching file and executing tests whenever any file changes
-         autoWatch: true,
-
-
-         // start these browsers
-         // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-         browsers: ['ChromeHeadless'], //打开无头Chrome浏览器
-
-
-         // Continuous Integration mode
-         // if true, Karma captures browsers, runs the tests and exits
-         singleRun: false,
-
-         // Concurrency level
-         // how many browser should be started simultaneous
-         concurrency: Infinity
-     })
- }
+    browsers: ['ChromeHeadless']
+  })
+}

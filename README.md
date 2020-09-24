@@ -1,5 +1,5 @@
 # SL-UI框架  一个Vue UI框架
-[![Build Status](https://travis-ci.org/luoshushu/SL-Ul.svg?branch=master)](https://travis-ci.org/luoshushu/SL-Ul)
+[![Build Status](https://travis-ci.org/luoshushu/SL-UI.svg?branch=master)](https://travis-ci.org/luoshushu/SL-UI)
 ## 介绍
 
 
