@@ -1,10 +1,11 @@
-const expect = chai.expect;
+
+import chai, {expect} from 'chai'
+import sinon from 'sinon'
+import sinonChai from 'sinon-chai'
 import Vue from 'vue'
-import Input from '../src/input'
-
-Vue.config.productionTip = false
-Vue.config.devtools = false
-
+import {shallowMount, mount} from '@vue/test-utils'
+import Input from '../../src/input'
+chai.use(sinonChai)
 /**
  * mocha 提供 describe it
  * sinon 提供 fake

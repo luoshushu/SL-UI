@@ -1,9 +1,12 @@
-const expect = chai.expect;
-import Vue from 'vue'
-import Toast from '../src/toast'
 
-Vue.config.productionTip = false
-Vue.config.devtools = false
+import Vue from 'vue'
+import Toast from '../../src/toast'
+import chai, { expect } from 'chai'
+import sinon from 'sinon'
+import sinonChai from 'sinon-chai'
+import { shallowMount, mount } from '@vue/test-utils'
+chai.use(sinonChai)
+
 
 describe('Toast', () => {
   //  BDD 行为驱动测试

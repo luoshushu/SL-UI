@@ -1,26 +1,31 @@
-const expect = chai.expect;
- import Vue from 'vue'
 
-import Tabs from '../src/tabs'
-import TabsPane from '../src/tabs-pane'
-import TabsItem from '../src/tabs-item'
-import TabsHead from '../src/tabs-head'
-import TabsBody from '../src/tabs-body'
+import Vue from 'vue'
+import Tabs from '../../src/tabs'
+import TabsPane from '../../src/tabs-pane'
+import TabsItem from '../../src/tabs-item'
+import TabsHead from '../../src/tabs-head'
+import TabsBody from '../../src/tabs-body'
+import chai, { expect } from 'chai'
+import sinon from 'sinon'
+import sinonChai from 'sinon-chai'
+import { shallowMount, mount } from '@vue/test-utils'
 
- Vue.config.productionTip = false
- Vue.config.devtools = false;
- Vue.component('sl-tabs',Tabs)
- Vue.component('sl-tabs-pane',TabsPane)
- Vue.component('sl-tabs-item',TabsItem)
- Vue.component('sl-tabs-head',TabsHead)
- Vue.component('sl-tabs-body',TabsBody)
+Vue.component('sl-tabs',Tabs)
+Vue.component('sl-tabs-pane',TabsPane)
+Vue.component('sl-tabs-item',TabsItem)
+Vue.component('sl-tabs-head',TabsHead)
+Vue.component('sl-tabs-body',TabsBody)
+
+chai.use(sinonChai)
+
+
 
  describe('tabs', () => {
     //  BDD 行为驱动测试
      it('存在.', () => {
          expect(Tabs).to.be.ok
      })
-     it('接受 selected 属性', (done) => {
+     it('接受 selected 属性', async () => {
        const div = document.createElement('div')
        document.body.appendChild(div)
        div.innerHTML = `
@@ -42,7 +47,7 @@ import TabsBody from '../src/tabs-body'
        vm.$nextTick(()=>{
         let x = vm.$el.querySelector('.tabs-item[data-name="1"]')
         expect(x.classList.contains('active')).to.be.true
-        done()
+        // done()
        })
      })
 
