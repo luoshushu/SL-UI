@@ -17,8 +17,8 @@
 </template>
 
 <script>
-  import SlButton from "../../../src/button";
-  import SlButtonGroup from "../../../src/button-group";
+  import SlButton from "../../../src/button/button";
+  import SlButtonGroup from "../../../src/button/button-group";
   export default {
     name: "button-demo",
     components: {
