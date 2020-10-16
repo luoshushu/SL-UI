@@ -1,9 +1,9 @@
 import Vue from "vue";
 import Demo from "./demo.vue";
 
-import Button from './button'
+import Button from './button/button.vue'
 import Icon from './icon'
-import ButtonGroup from './button-group'
+import ButtonGroup from './button/button-group'
 import Input from './input'
 import Row from './row'
 import Col from './col'

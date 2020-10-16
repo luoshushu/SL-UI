@@ -117,7 +117,7 @@
 </template>
 
 <script>
-import SlButton from "./button";
+import SlButton from "./button/button";
 export default {
   name: "demo",
   components: { SlButton },
