@@ -79,19 +79,19 @@ export default {
       let a = {
         top: {
           top: top + window.scrollY,
-          left: left + window.screenX,
+          left: left + window.scrollX,
         },
         bottom: {
           top: top + height + window.scrollY,
-          left: left + window.screenX,
+          left: left + window.scrollX,
         },
         left: {
           top: top + window.scrollY + (height - height2) / 2,
-          left: left + window.screenX,
+          left: left + window.scrollX,
         },
         right: {
           top: top + window.scrollY + (height - height2) / 2,
-          left: left + window.screenX + width,
+          left: left + window.scrollX + width,
         },
       };
       contentWrapper.style.top = a[this.position].top + "px";
