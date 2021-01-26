@@ -90,10 +90,14 @@
 
     <div class="box">
       <div class="title">input</div>
-      <sl-input value="苏宋霖" disabled></sl-input>
-      <sl-input value="苏先生" readonly></sl-input>
-      <sl-input value="苏" error="名字不能输入一个字"></sl-input>
-      <sl-input v-model="something" @change="inputChange"></sl-input>
+      <sl-input value="苏宋霖" disabled />
+      <sl-input value="苏先生" readonly />
+      <sl-input value="苏" error="请输入" placeholder="请输入内容" />
+      <sl-input
+        placeholder="请输入内容"
+        v-model="something"
+        @change="inputChange"
+      />
       {{ something }}
     </div>
     <div class="box">
