@@ -17,8 +17,10 @@
       </sl-tabs>
     </div>
     <div class="box">
+      {{ isPopover }}
       <div class="title">popover</div>
-      <sl-popover v-model="isPopover" position="top" trigger="click">
+
+      <sl-popover v-model="isPopover1" position="top" trigger="click">
         <div slot="content">哈哈哈哈</div>
         <sl-button>点击在上</sl-button>
       </sl-popover>
@@ -27,7 +29,7 @@
         <sl-button>点击在下</sl-button>
       </sl-popover>
       <sl-popover v-model="isPopover" position="left" trigger="click">
-        <div slot="content" slot-scope="{close}">
+        <div slot="content" slot-scope="{ close }">
           <div>哈哈哈哈哈哈哈哈哈哈哈哈</div>
           <div>哈哈哈哈哈哈哈哈哈哈哈哈</div>
           <div>哈哈哈哈哈哈哈哈哈哈哈哈</div>
@@ -44,12 +46,15 @@
     <div class="box">
       <div class="title">collapse</div>
       <sl-collapse :selected.sync="collapseTab" :single="false">
-        <sl-collapse-item
-          name="1"
-          title="标题啦1"
-        >前端入门和进阶学习笔记。从零开始学前端，做一名精致的前端工程师。前端入门和进阶学习笔记。从零开始学前端，做一名精致的前端工程师。前端入门和进阶学习笔记。从零开始学前端，做一名精致的前端工程师。前端入门和进阶学习笔记。从零开始学前端，做一名精致的前端工程师。</sl-collapse-item>
-        <sl-collapse-item name="2" title="标题啦2">前端入门和进阶学习笔记。从零开始学前端，做一名精致的前端工程师。</sl-collapse-item>
-        <sl-collapse-item name="3" title="标题啦333">前端入门和进阶学习笔记。从零开始学前端，做一名精致的前端工程师。</sl-collapse-item>
+        <sl-collapse-item name="1" title="标题啦1"
+          >前端入门和进阶学习笔记。从零开始学前端，做一名精致的前端工程师。前端入门和进阶学习笔记。从零开始学前端，做一名精致的前端工程师。前端入门和进阶学习笔记。从零开始学前端，做一名精致的前端工程师。前端入门和进阶学习笔记。从零开始学前端，做一名精致的前端工程师。</sl-collapse-item
+        >
+        <sl-collapse-item name="2" title="标题啦2"
+          >前端入门和进阶学习笔记。从零开始学前端，做一名精致的前端工程师。</sl-collapse-item
+        >
+        <sl-collapse-item name="3" title="标题啦333"
+          >前端入门和进阶学习笔记。从零开始学前端，做一名精致的前端工程师。</sl-collapse-item
+        >
       </sl-collapse>
     </div>
 
@@ -59,17 +64,17 @@
       <sl-button @click="clickToast2">Toast-middle</sl-button>
       <sl-button @click="clickToast3">Toast-bottom</sl-button>
     </div>
-    
+
     <div class="box">
       <div class="title">网格布局Row/Col</div>
       <sl-row>
-        <sl-col :span="24" :narrow-pc="{span:8}" :ipad="{span:8}">
+        <sl-col :span="24" :narrow-pc="{ span: 8 }" :ipad="{ span: 8 }">
           <div id="demo">hh</div>
         </sl-col>
-        <sl-col :span="24" :narrow-pc="{span:8}" :ipad="{span:8}">
+        <sl-col :span="24" :narrow-pc="{ span: 8 }" :ipad="{ span: 8 }">
           <div id="demo">hh</div>
         </sl-col>
-        <sl-col :span="24" :narrow-pc="{span:8}" :ipad="{span:8}">
+        <sl-col :span="24" :narrow-pc="{ span: 8 }" :ipad="{ span: 8 }">
           <div id="demo">hh</div>
         </sl-col>
       </sl-row>
@@ -89,24 +94,26 @@
       <sl-input value="苏先生" readonly></sl-input>
       <sl-input value="苏" error="名字不能输入一个字"></sl-input>
       <sl-input v-model="something" @change="inputChange"></sl-input>
-      {{something}}
+      {{ something }}
     </div>
     <div class="box">
       <div class="title">button</div>
 
       <sl-button>我不爱css</sl-button>
       <sl-button
-        @click=" loading1 = !loading1"
+        @click="loading1 = !loading1"
         icon="xiazai"
         :loading="loading1"
         icon-position="left"
-      >我不爱css</sl-button>
+        >我不爱css</sl-button
+      >
       <sl-button
-        @click=" loading2 = !loading2"
+        @click="loading2 = !loading2"
         icon="set"
         :loading="loading2"
         icon-position="right"
-      >我不爱css</sl-button>
+        >我不爱css</sl-button
+      >
       <sl-button-group>
         <sl-button icon="previous" icon-position="left">上一页</sl-button>
         <sl-button icon-position="right">更多</sl-button>
@@ -129,6 +136,8 @@ export default {
       loading2: false,
       something: "苏宋霖",
       isPopover: false,
+
+      isPopover1: false,
       collapseTab: ["2"],
     };
   },

@@ -3,14 +3,14 @@
     <!-- 阻止冒泡 -->
     <div
       class="sl-content-wrapper"
-      :class="{[`position-${position}`]:true}"
+      :class="{ [`position-${position}`]: true }"
       ref="contentWrapper"
       v-if="visible"
       @click.stop
     >
       <slot name="content" :close="close"></slot>
     </div>
-    <span ref="triggerWrapper" style="display: inline-block;">
+    <span ref="triggerWrapper" style="display: inline-block">
       <slot></slot>
     </span>
   </div>
@@ -26,19 +26,19 @@ export default {
       default: "top",
       validator(value) {
         return ["top", "bottom", "left", "right"].indexOf(value) >= 0;
-      }
+      },
     },
     trigger: {
       type: String,
       default: "click",
       validator(value) {
         return ["click", "hover"].indexOf(value) >= 0;
-      }
-    }
+      },
+    },
   },
   data() {
     return {
-      visible: false
+      visible: false,
     };
   },
   watch: {
@@ -47,8 +47,8 @@ export default {
       handler(val) {
         this.visible = val;
         this.$emit("input", val);
-      }
-    }
+      },
+    },
   },
   mounted() {
     const { popover } = this.$refs;
@@ -79,20 +79,20 @@ export default {
       let a = {
         top: {
           top: top + window.scrollY,
-          left: left + window.screenX
+          left: left + window.screenX,
         },
         bottom: {
           top: top + height + window.scrollY,
-          left: left + window.screenX
+          left: left + window.screenX,
         },
         left: {
           top: top + window.scrollY + (height - height2) / 2,
-          left: left + window.screenX
+          left: left + window.screenX,
         },
         right: {
           top: top + window.scrollY + (height - height2) / 2,
-          left: left + window.screenX + width
-        }
+          left: left + window.screenX + width,
+        },
       };
       contentWrapper.style.top = a[this.position].top + "px";
       contentWrapper.style.left = a[this.position].left + "px";
@@ -127,8 +127,8 @@ export default {
           this.open();
         }
       }
-    }
-  }
+    },
+  },
 };
 </script>
 

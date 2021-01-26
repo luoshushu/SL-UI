@@ -1,73 +1,73 @@
-import Vue from 'vue'
-import Button from './button/button.vue'
-import Icon from './icon'
-import ButtonGroup from './button/button-group'
-import Input from './input'
-import Row from './row'
-import Col from './col'
-import Tabs from './tabs'
-import TabsPane from './tabs-pane'
-import TabsItem from './tabs-item'
-import TabsHead from './tabs-head'
-import TabsBody from './tabs-body'
+// import Vue from 'vue'
+// import Button from './button/button.vue'
+// import Icon from './icon'
+// import ButtonGroup from './button/button-group'
+// import Input from './input'
+// import Row from './row'
+// import Col from './col'
+// import Tabs from './tabs'
+// import TabsPane from './tabs-pane'
+// import TabsItem from './tabs-item'
+// import TabsHead from './tabs-head'
+// import TabsBody from './tabs-body'
 
-import Popover from './popover'
-import Collapse from './collapse'
-import CollapseItem from './collapse-item'
+// import Popover from './popover'
+// import Collapse from './collapse'
+// import CollapseItem from './collapse-item'
 
-import plugin from './plugin'
-Vue.use(plugin)
+// import plugin from './plugin'
+// Vue.use(plugin)
 
-Vue.component('sl-button',Button)
-Vue.component('sl-icon',Icon)
-Vue.component('sl-button-group',ButtonGroup)
-Vue.component('sl-input',Input)
-Vue.component('sl-row',Row)
-Vue.component('sl-col',Col)
+// Vue.component('sl-button',Button)
+// Vue.component('sl-icon',Icon)
+// Vue.component('sl-button-group',ButtonGroup)
+// Vue.component('sl-input',Input)
+// Vue.component('sl-row',Row)
+// Vue.component('sl-col',Col)
 
-Vue.component('sl-tabs',Tabs)
-Vue.component('sl-tabs-pane',TabsPane)
-Vue.component('sl-tabs-item',TabsItem)
-Vue.component('sl-tabs-head',TabsHead)
-Vue.component('sl-tabs-body',TabsBody)
+// Vue.component('sl-tabs',Tabs)
+// Vue.component('sl-tabs-pane',TabsPane)
+// Vue.component('sl-tabs-item',TabsItem)
+// Vue.component('sl-tabs-head',TabsHead)
+// Vue.component('sl-tabs-body',TabsBody)
 
-Vue.component('sl-popover',Popover)
-Vue.component('sl-collapse',Collapse)
-Vue.component('sl-collapse-item',CollapseItem)
+// Vue.component('sl-popover',Popover)
+// Vue.component('sl-collapse',Collapse)
+// Vue.component('sl-collapse-item',CollapseItem)
 
-new Vue({
-  el: '#app',
-  data:{
-    selectedTab:'1',
-    loading1:false,
-    loading2:false,
-    something:'苏宋霖',
-    isPopover:false,
-    collapseTab:['2']
-  },
+// new Vue({
+//   el: '#app',
+//   data:{
+//     selectedTab:'1',
+//     loading1:false,
+//     loading2:false,
+//     something:'苏宋霖',
+//     isPopover:false,
+//     collapseTab:['2']
+//   },
 
-  mounted() {
-  
-  },
-  methods: {
-    clickToast1(){this.clickToast('top')},
-    clickToast2(){this.clickToast('middle')},
-    clickToast3(){this.clickToast('bottom')},
-    clickToast(position){
-      this.$toast(`操作成功！！  ${parseInt(Math.random()*100) }`,{
-        position,
-        enableHtml:false,
-        closeButton:{
-          text:'知道了',
-          callback(){
-            console.log('回调'); 
-          }
-        },
-        autoClose:3, 
-        })
-    }
-  },
-});
+//   mounted() {
+
+//   },
+//   methods: {
+//     clickToast1(){this.clickToast('top')},
+//     clickToast2(){this.clickToast('middle')},
+//     clickToast3(){this.clickToast('bottom')},
+//     clickToast(position){
+//       this.$toast(`操作成功！！  ${parseInt(Math.random()*100) }`,{
+//         position,
+//         enableHtml:false,
+//         closeButton:{
+//           text:'知道了',
+//           callback(){
+//             console.log('回调'); 
+//           }
+//         },
+//         autoClose:3, 
+//         })
+//     }
+//   },
+// });
 
 // import chai from 'chai'
 // import spies from 'chai-spies'
@@ -164,17 +164,17 @@ new Vue({
 //   // 希望间谍被调用
 //   button.click()
 //   expect(spy).to.have.been.called()
-  
+
 // }
 
 
-  
+
 // } catch (error) {
 //   window.errors  = [error]
-  
+
 // }finally{
 //   window.errors && window.errors.map( (error)=>{
 //     console.error(error.message);
-    
+
 //   })
 // }
