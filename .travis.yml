@@ -13,6 +13,9 @@ before_script:
 
 deploy:
   provider: npm
-  email: "852835915@qq.com"
-  api_key: "$NPM_TOKEN"
   skip-cleanup: true
+  email: "852835915@qq.com"
+  # api_key: "$NPM_TOKEN"
+  token: $GH_TOKEN
+  keep_history: true
+  target_branch: master
