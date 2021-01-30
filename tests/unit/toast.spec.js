@@ -44,8 +44,8 @@ describe('Toast', () => {
       let closeButton = vm.$el.querySelector('.close')
       expect(closeButton.textContent.trim()).to.equal('关闭哟'); //期待 html值等于 关闭哟
       setTimeout(() => {
-        closeButton.click()
-        expect(callback).to.have.been.called
+        closeButton.click() //执行关闭
+        expect(callback).to.have.been.called //回调被调用 说明执行关闭管用
         vm.$destroy(); //销毁
         done()
       }, 200);
