@@ -9,3 +9,9 @@ sudo: required
 before_script:
   - "sudo chown root /opt/google/chrome/chrome-sandbox"
   - "sudo chmod 4755 /opt/google/chrome/chrome-sandbox"
+
+deploy:
+  provider: npm
+  email: "852835915@qq.com"
+  api_key: "$NPM_TOKEN"
+  skip-cleanup: true
