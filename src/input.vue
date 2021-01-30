@@ -60,6 +60,8 @@ export default {
     font-weight: 400;
     height: 38px;
     border: 1px solid $border-color;
+    // border: none;
+    // border-bottom: 1px solid $border-color;
     border-radius: 4px;
     padding: 0 8px;
     font-size: inherit;
